@@ -21,7 +21,7 @@
     @yield('footer')
     <strong> Developed by :<a href="https://www.linkedin.com/in/bola-erian-nasr-24391764/" target="_blank">Bola E.Nasr </a>
     &
-    <a href="#" target="_blank">Abdaullah</a>
+    <a href="https://www.linkedin.com/in/abdullah-ali-a15781155/" target="_blank">Abdullah Ali</a>
     </strong>
 </footer>
 
