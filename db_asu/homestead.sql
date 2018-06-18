@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jun 16, 2018 at 12:46 PM
+-- Generation Time: Jun 18, 2018 at 04:18 PM
 -- Server version: 5.7.21
 -- PHP Version: 7.1.16
 
@@ -228,7 +228,7 @@ CREATE TABLE IF NOT EXISTS `menu__menuitems` (
   `icon` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `menu__menuitems_menu_id_foreign` (`menu_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `menu__menuitems`
@@ -236,7 +236,8 @@ CREATE TABLE IF NOT EXISTS `menu__menuitems` (
 
 INSERT INTO `menu__menuitems` (`id`, `menu_id`, `page_id`, `position`, `target`, `link_type`, `class`, `module_name`, `parent_id`, `lft`, `rgt`, `depth`, `created_at`, `updated_at`, `is_root`, `icon`) VALUES
 (1, 1, NULL, 0, NULL, 'page', '', NULL, NULL, NULL, NULL, NULL, '2018-06-16 18:59:18', '2018-06-16 18:59:18', 1, NULL),
-(2, 1, 2, 0, '_self', 'page', NULL, NULL, 1, NULL, NULL, NULL, '2018-06-16 19:00:44', '2018-06-16 19:00:44', 0, NULL);
+(2, 1, 2, 1, '_self', 'internal', NULL, NULL, NULL, NULL, NULL, NULL, '2018-06-16 19:00:44', '2018-06-16 21:25:43', 0, NULL),
+(3, 1, NULL, 2, '_self', 'external', NULL, NULL, NULL, NULL, NULL, NULL, '2018-06-16 21:26:12', '2018-06-16 21:26:20', 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -258,7 +259,7 @@ CREATE TABLE IF NOT EXISTS `menu__menuitem_translations` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `menu__menuitem_translations_menuitem_id_locale_unique` (`menuitem_id`,`locale`),
   KEY `menu__menuitem_translations_locale_index` (`locale`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `menu__menuitem_translations`
@@ -268,7 +269,9 @@ INSERT INTO `menu__menuitem_translations` (`id`, `menuitem_id`, `locale`, `statu
 (1, 1, 'en', 0, 'root', NULL, NULL, '2018-06-16 18:59:18', '2018-06-16 18:59:18'),
 (2, 1, 'ar', 0, 'root', NULL, NULL, '2018-06-16 18:59:18', '2018-06-16 18:59:18'),
 (3, 2, 'en', 1, 'Bola', NULL, 'bola', '2018-06-16 19:00:44', '2018-06-16 19:00:44'),
-(4, 2, 'ar', 1, 'بولا', NULL, 'bola-arabic', '2018-06-16 19:00:44', '2018-06-16 19:00:44');
+(4, 2, 'ar', 1, 'بولا', NULL, 'bola-arabic', '2018-06-16 19:00:44', '2018-06-16 19:00:44'),
+(5, 3, 'en', 1, 'test', 'asnd,asmnd,asmnd', NULL, '2018-06-16 21:26:12', '2018-06-16 21:26:12'),
+(6, 3, 'ar', 1, 'test', 'adhkasjhdkjasd', NULL, '2018-06-16 21:26:12', '2018-06-16 21:26:12');
 
 -- --------------------------------------------------------
 
@@ -291,7 +294,7 @@ CREATE TABLE IF NOT EXISTS `menu__menus` (
 --
 
 INSERT INTO `menu__menus` (`id`, `name`, `primary`, `created_at`, `updated_at`) VALUES
-(1, 'Bola', 0, '2018-06-16 18:59:17', '2018-06-16 18:59:17');
+(1, 'Main', 0, '2018-06-16 18:59:17', '2018-06-16 21:23:29');
 
 -- --------------------------------------------------------
 
@@ -318,8 +321,8 @@ CREATE TABLE IF NOT EXISTS `menu__menu_translations` (
 --
 
 INSERT INTO `menu__menu_translations` (`id`, `menu_id`, `locale`, `status`, `title`, `created_at`, `updated_at`) VALUES
-(1, 1, 'en', 1, 'Bola', '2018-06-16 18:59:17', '2018-06-16 18:59:17'),
-(2, 1, 'ar', 1, 'Bola', '2018-06-16 18:59:17', '2018-06-16 18:59:17');
+(1, 1, 'en', 1, 'Main', '2018-06-16 18:59:17', '2018-06-16 21:23:29'),
+(2, 1, 'ar', 1, 'Main-arabic', '2018-06-16 18:59:17', '2018-06-16 21:23:29');
 
 -- --------------------------------------------------------
 
@@ -434,10 +437,10 @@ CREATE TABLE IF NOT EXISTS `page__page_translations` (
 --
 
 INSERT INTO `page__page_translations` (`id`, `page_id`, `locale`, `title`, `slug`, `status`, `body`, `meta_title`, `meta_description`, `og_title`, `og_description`, `og_image`, `og_type`, `created_at`, `updated_at`) VALUES
-(1, 1, 'en', 'Home page', 'home', '1', '<p><strong>You made it!</strong></p>\n\n<p>You&#39;ve installed AsgardCMS and are ready to proceed to the <a href=\"/en/backend\">administration area</a>.</p>\n\n<h2>What&#39;s next ?</h2>\n\n<p>Learn how you can develop modules for AsgardCMS by reading our <a href=\"https://github.com/AsgardCms/Documentation\">documentation</a>.</p>\n\n<p><img alt=\"\" src=\"http://localhost:8000/assets/media/bg-clean-pic-01_mediumThumb.jpg\" style=\"width: 180px; height: 101px;\" /></p>', 'Home page', NULL, NULL, NULL, NULL, NULL, '2018-06-14 00:05:35', '2018-06-15 08:08:07'),
+(1, 1, 'en', 'Home page', 'home', '1', '<h1><b>Home Page of AinShames University</b></h1>\n\n<h2>Text Here .....</h2>\n\n<p><img alt=\"\" src=\"http://localhost:8000/assets/media/bg-clean-pic-01_mediumThumb.jpg\" style=\"width: 180px; height: 101px;\" /></p>', 'Home page', NULL, NULL, NULL, NULL, NULL, '2018-06-14 00:05:35', '2018-06-18 23:11:28'),
 (2, 2, 'en', 'bola', 'bola', '1', '<p><span class=\"marker\">bla bla bla bla&nbsp;bla bla bla bla&nbsp;bla bla bla bla&nbsp;bla bla bla bla&nbsp;bla bla bla bla&nbsp;bla bla bla bla&nbsp;bla bla bla bla&nbsp;bla bla bla bla&nbsp;bla bla bla bla&nbsp;bla bla bla bla&nbsp;bla bla bla bla bla bla bla bla bla bla bla bla&nbsp;bla bla bla bla bla bla bla bla bla bla bla bla&nbsp;bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla&nbsp;bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla&nbsp;bla bla bla bla&nbsp;bla bla bla bla bla bla bla bla&nbsp;bla bla bla bla&nbsp;bla bla bla bla&nbsp;bla bla bla bla&nbsp;bla bla bla bla bla bla bla bla&nbsp;bla bla bla bla&nbsp;bla bla bla bla&nbsp;bla bla bla bla&nbsp;bla bla bla bla&nbsp;bla bla bla bla&nbsp;bla bla bla bla&nbsp;bla bla bla bla&nbsp;bla bla bla bla&nbsp;bla bla bla bla&nbsp;bla bla bla bla&nbsp;bla bla bla bla&nbsp;bla bla bla bla&nbsp;bla bla bla bla&nbsp;bla bla bla bla&nbsp;bla bla bla bla&nbsp;bla bla bla bla&nbsp;bla bla bla bla&nbsp;bla bla bla bla&nbsp;bla bla bla bla&nbsp;bla bla bla bla&nbsp;bla bla bla bla&nbsp;bla bla bla bla&nbsp;bla bla bla bla&nbsp;bla bla bla bla&nbsp;bla bla bla bla&nbsp;bla bla bla bla&nbsp;bla bla bla bla&nbsp;bla bla bla bla&nbsp;bla bla bla bla&nbsp;bla bla bla bla&nbsp;bla bla bla bla&nbsp;bla bla bla bla&nbsp;bla bla bla bla&nbsp;bla bla bla bla&nbsp;bla bla bla bla&nbsp;bla bla bla bla&nbsp;bla bla bla bla&nbsp;</span></p>', NULL, NULL, NULL, NULL, NULL, NULL, '2018-06-16 18:58:12', '2018-06-16 18:58:12'),
 (3, 2, 'ar', 'بولا', 'bola-arabic', '1', '<p>أناأناأناأناأناأناأناأناأناأناأناأناأناأناأناأناأناأناأناأناأناأناأناأناأناأناأناأنا</p>\n\n<p>أناأناأناأناأناأناأناأناأناأناأناأناأناأنا</p>\n\n<p>أناأناأناأناأناأناأناأناأنا</p>\n\n<p>أناأناأناأناأنا</p>', NULL, NULL, NULL, NULL, NULL, NULL, '2018-06-16 18:58:12', '2018-06-16 18:58:12'),
-(4, 1, 'ar', 'الرئيسية', 'الرئيسية', NULL, '<p><strong>You made it!</strong></p>\n\n<p>You&#39;ve installed AsgardCMS and are ready to proceed to the&nbsp;<a href=\"/en/backend\">administration area</a>.</p>\n\n<h2>What&#39;s next ?</h2>\n\n<p>Learn how you can develop modules for AsgardCMS اسيتشاينشستاينتسشاينتسشاينتشسانتيreading our&nbsp;<a href=\"https://github.com/AsgardCms/Documentation\">documentation</a>.</p>\n\n<p><img alt=\"\" src=\"http://localhost:8000/assets/media/bg-clean-pic-01_mediumThumb.jpg\" style=\"width: 180px; height: 101px;\" /></p>', NULL, NULL, NULL, NULL, NULL, NULL, '2018-06-16 19:17:58', '2018-06-16 19:17:58');
+(4, 1, 'ar', 'الرئيسية', 'الرئيسية', NULL, '<h1><b>الصفحة الرئيسية لجامعة عين شمس</b></h1>\n\n<h2>اكتب هنا&nbsp;</h2>\n\n<p><img alt=\"\" src=\"http://localhost:8000/assets/media/bg-clean-pic-01_mediumThumb.jpg\" style=\"width: 180px; height: 101px;\" /></p>', NULL, NULL, NULL, NULL, NULL, NULL, '2018-06-16 19:17:58', '2018-06-18 23:16:39');
 
 -- --------------------------------------------------------
 
@@ -454,7 +457,7 @@ CREATE TABLE IF NOT EXISTS `persistences` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `persistences_code_unique` (`code`)
-) ENGINE=InnoDB AUTO_INCREMENT=166 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=202 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `persistences`
@@ -582,7 +585,6 @@ INSERT INTO `persistences` (`id`, `user_id`, `code`, `created_at`, `updated_at`)
 (119, 1, 'glJPgGbRvpc4Q0w3qkfaynHuTeG8ZSUb', '2018-06-15 08:33:15', '2018-06-15 08:33:15'),
 (120, 1, 'OzNkLWWmQRI57NTrOxumwF40cydQc4OS', '2018-06-15 08:33:41', '2018-06-15 08:33:41'),
 (121, 1, 'CZ4AjHEe0JwvA4My7GX0AjbbPgwj7MTJ', '2018-06-15 08:33:53', '2018-06-15 08:33:53'),
-(122, 1, 'MA6hpckpZSqr1umsyIO42HHiGHAEN1E2', '2018-06-16 18:28:19', '2018-06-16 18:28:19'),
 (123, 1, 'daukjsFUuKGrAI0Sv1EWv60UehXF9s9v', '2018-06-16 18:56:01', '2018-06-16 18:56:01'),
 (124, 1, 'pdMuCJCjAIIL1d0LTQ9Y9SKovV9pgCnS', '2018-06-16 18:56:09', '2018-06-16 18:56:09'),
 (125, 1, 'X9snx09ZgdlC1lS153980sCwPyFKJl9F', '2018-06-16 18:57:10', '2018-06-16 18:57:10'),
@@ -625,7 +627,43 @@ INSERT INTO `persistences` (`id`, `user_id`, `code`, `created_at`, `updated_at`)
 (162, 1, 'pVbfGmXgDHSza1As0VT4iqTY0KU2qRfQ', '2018-06-16 19:30:19', '2018-06-16 19:30:19'),
 (163, 1, 'qVNtWNgW3zcPEQziSPFAJh5Vt4fLryg3', '2018-06-16 19:30:24', '2018-06-16 19:30:24'),
 (164, 1, 'w6ciI1H94z1j03hNrVapiI2tQSENr5Sx', '2018-06-16 19:30:38', '2018-06-16 19:30:38'),
-(165, 1, 'ufPmxvhO9JAAslMGxmgK5hWxiRI6SyCn', '2018-06-16 19:31:24', '2018-06-16 19:31:24');
+(165, 1, 'ufPmxvhO9JAAslMGxmgK5hWxiRI6SyCn', '2018-06-16 19:31:24', '2018-06-16 19:31:24'),
+(166, 1, 'LAk8qvdb6dic92c48ONnxjTErFDrQuqa', '2018-06-16 21:03:18', '2018-06-16 21:03:18'),
+(167, 1, 'cVDe9D6oDt23stfmWTL0mSbHdwAVRhGh', '2018-06-16 21:23:47', '2018-06-16 21:23:47'),
+(168, 1, 'eFQ8nspHy0YZYoITdgtmsu32GSwgbfe8', '2018-06-16 21:25:39', '2018-06-16 21:25:39'),
+(169, 1, 'qvCCDctZkDenHJsR780SP7t10oqruZVV', '2018-06-16 21:25:43', '2018-06-16 21:25:43'),
+(170, 1, 'xQRx6so023Clmnb56d4tyrwh7h2zTiwt', '2018-06-16 21:26:20', '2018-06-16 21:26:20'),
+(171, 1, 'HjGLFpvZDMBl9DwlLRbn2tKsrvrkrfi5', '2018-06-16 21:32:07', '2018-06-16 21:32:07'),
+(172, 1, 'ElqKqryp29lLrQmvHxzwIJf3LqRGAZ5S', '2018-06-16 21:32:14', '2018-06-16 21:32:14'),
+(173, 1, 'V3s7XBpxMxb3w0NtK5TnjcnZUWZJ2kis', '2018-06-16 21:32:15', '2018-06-16 21:32:15'),
+(174, 1, 'LchvhJmnX2DqAxUxfVRJBlJTHzdJdv0F', '2018-06-16 21:32:16', '2018-06-16 21:32:16'),
+(175, 1, 'hIkZGUzFydwwCPQIg2xPEbf8JfWPPD12', '2018-06-16 21:32:46', '2018-06-16 21:32:46'),
+(176, 1, 'y0fU41GBQh7aZ7vUStAiPKg69qOp4cJT', '2018-06-17 17:25:26', '2018-06-17 17:25:26'),
+(177, 1, 'grS0ZHkC9D9HnuYXELt5zZTZMnesGYNp', '2018-06-17 17:25:50', '2018-06-17 17:25:50'),
+(178, 1, 'JGay24vxU2rcsUy7WXezINNV2oLdWVML', '2018-06-17 17:26:05', '2018-06-17 17:26:05'),
+(179, 1, '2UapNkKJhWwFghVopb6pJMrxbns2ioCb', '2018-06-17 17:26:20', '2018-06-17 17:26:20'),
+(180, 1, 'VbSOPdxNrBvxeRgb6MdG6TsyX605rN9O', '2018-06-18 23:00:03', '2018-06-18 23:00:03'),
+(181, 1, 'i7PinXwFz7WDlLi4lLZIHuSn2IYC7H1h', '2018-06-18 23:00:44', '2018-06-18 23:00:44'),
+(182, 1, 'MiSlaaLhjGC8fgx5fVeWFLfFdckPOvZM', '2018-06-18 23:00:56', '2018-06-18 23:00:56'),
+(183, 1, 'eS83CcyCqb23hW5I6XqY4ath4PeoOWHX', '2018-06-18 23:09:58', '2018-06-18 23:09:58'),
+(184, 1, 'vDMwW8g2qSIhy1AvPkQzgA7mXavf3HAX', '2018-06-18 23:10:07', '2018-06-18 23:10:07'),
+(185, 1, 'CBntsqg0ssDtsXebb4JuxyKojbp6QsS1', '2018-06-18 23:10:09', '2018-06-18 23:10:09'),
+(186, 1, '9It01lXHrEy1VWHP5I9rIGZO0Zjn7c9y', '2018-06-18 23:10:10', '2018-06-18 23:10:10'),
+(187, 1, 'JEpZrf51xZmwHXJBEvXvsJctdvX7uwyz', '2018-06-18 23:11:27', '2018-06-18 23:11:27'),
+(188, 1, 'kJnVnvseX5OOeOiHH9JkLRInVwBNgTld', '2018-06-18 23:11:30', '2018-06-18 23:11:30'),
+(189, 1, 't1MJnZdcbthPwkFWlyqU3oEW08kPIhAH', '2018-06-18 23:14:50', '2018-06-18 23:14:50'),
+(190, 1, '1JbLnVwXYonkbnN931aqRpK29uEbPwjQ', '2018-06-18 23:14:54', '2018-06-18 23:14:54'),
+(191, 1, 'yk7U4tLrWnRBfO8DiCpxTDbbfJVNVBtJ', '2018-06-18 23:14:56', '2018-06-18 23:14:56'),
+(192, 1, 'HZuneiUwtqUB2ga9wNrjNRDfpsO2GhIc', '2018-06-18 23:15:14', '2018-06-18 23:15:14'),
+(193, 1, 'lIfbkXmwwnW4z70EtQAk5doeYUl2aSlA', '2018-06-18 23:15:20', '2018-06-18 23:15:20'),
+(194, 1, 'oWSUShNS9U5LE2L3kaR2oPm346EEaJlp', '2018-06-18 23:15:21', '2018-06-18 23:15:21'),
+(195, 1, 'jx0S5kWlKth4mAZwiDwotzGfYSVJrcx5', '2018-06-18 23:15:24', '2018-06-18 23:15:24'),
+(196, 1, 'xgn2qL43rGclQ3M8uJdtP0f8127qXRVE', '2018-06-18 23:15:37', '2018-06-18 23:15:37'),
+(197, 1, '8yKv4IJ4UfLChdcOwBFkves8BPyT25Pe', '2018-06-18 23:15:43', '2018-06-18 23:15:43'),
+(198, 1, 'HTMGzEozE3FDBhbX1IgXrxQiNZGglibE', '2018-06-18 23:15:44', '2018-06-18 23:15:44'),
+(199, 1, 'ovahE0Yl6gQHA6OKC18ZeGpFtlf3zQ7c', '2018-06-18 23:15:46', '2018-06-18 23:15:46'),
+(200, 1, 'Msykv7XzuTHaz2tWQvIPAGFOebsV8prE', '2018-06-18 23:16:38', '2018-06-18 23:16:38'),
+(201, 1, 'YdXhzk5lQCZLhPseas5PkKn8nPF3web0', '2018-06-18 23:16:41', '2018-06-18 23:16:41');
 
 -- --------------------------------------------------------
 
@@ -738,7 +776,7 @@ CREATE TABLE IF NOT EXISTS `setting__settings` (
 --
 
 INSERT INTO `setting__settings` (`id`, `name`, `plainValue`, `isTranslatable`, `created_at`, `updated_at`) VALUES
-(1, 'core::template', 'Flatly', 0, '2018-06-14 00:05:35', '2018-06-14 00:05:35'),
+(1, 'core::template', 'ASU', 0, '2018-06-14 00:05:35', '2018-06-18 23:01:59'),
 (2, 'core::locales', '[\"en\",\"ar\"]', 0, '2018-06-14 00:05:35', '2018-06-15 08:30:04'),
 (3, 'core::site-name', NULL, 1, '2018-06-15 08:30:03', '2018-06-15 08:30:03'),
 (4, 'core::site-name-mini', NULL, 1, '2018-06-15 08:30:03', '2018-06-15 08:30:03'),
@@ -847,7 +885,7 @@ CREATE TABLE IF NOT EXISTS `throttle` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `throttle_user_id_index` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `throttle`
@@ -928,7 +966,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `password`, `permissions`, `last_login`, `first_name`, `last_name`, `created_at`, `updated_at`) VALUES
-(1, 'bola.e.nasr@gmail.com', '$2y$10$AETjNr.taa7EnteuxXzuxuQXPABetg25lzRANoG6xryhS/cQuYX.C', '{\"blog.posts.index\":true,\"blog.posts.create\":true,\"blog.posts.edit\":true,\"blog.posts.destroy\":true,\"blog.categories.index\":true,\"blog.categories.create\":true,\"blog.categories.edit\":true,\"blog.categories.destroy\":true,\"core.sidebar.group\":true,\"dashboard.index\":true,\"dashboard.update\":true,\"dashboard.reset\":true,\"media.medias.index\":true,\"media.medias.create\":true,\"media.medias.edit\":true,\"media.medias.destroy\":true,\"media.folders.index\":true,\"media.folders.create\":true,\"media.folders.edit\":true,\"media.folders.destroy\":true,\"menu.menus.index\":true,\"menu.menus.create\":true,\"menu.menus.edit\":true,\"menu.menus.destroy\":true,\"menu.menuitems.index\":true,\"menu.menuitems.create\":true,\"menu.menuitems.edit\":true,\"menu.menuitems.destroy\":true,\"page.pages.index\":true,\"page.pages.create\":true,\"page.pages.edit\":true,\"page.pages.destroy\":true,\"setting.settings.index\":true,\"setting.settings.edit\":true,\"tag.tags.index\":true,\"tag.tags.create\":true,\"tag.tags.edit\":true,\"tag.tags.destroy\":true,\"translation.translations.index\":true,\"translation.translations.edit\":true,\"translation.translations.import\":true,\"translation.translations.export\":true,\"user.users.index\":true,\"user.users.create\":true,\"user.users.edit\":true,\"user.users.destroy\":true,\"user.roles.index\":true,\"user.roles.create\":true,\"user.roles.edit\":true,\"user.roles.destroy\":true,\"account.api-keys.index\":true,\"account.api-keys.create\":true,\"account.api-keys.destroy\":true,\"workshop.sidebar.group\":true,\"workshop.modules.index\":true,\"workshop.modules.show\":true,\"workshop.modules.update\":true,\"workshop.modules.disable\":true,\"workshop.modules.enable\":true,\"workshop.modules.publish\":true,\"workshop.themes.index\":true,\"workshop.themes.show\":true,\"workshop.themes.publish\":true}', '2018-06-16 19:31:24', 'Bola', 'Nasr', '2018-06-14 00:05:12', '2018-06-16 19:31:24'),
+(1, 'bola.e.nasr@gmail.com', '$2y$10$AETjNr.taa7EnteuxXzuxuQXPABetg25lzRANoG6xryhS/cQuYX.C', '{\"blog.posts.index\":true,\"blog.posts.create\":true,\"blog.posts.edit\":true,\"blog.posts.destroy\":true,\"blog.categories.index\":true,\"blog.categories.create\":true,\"blog.categories.edit\":true,\"blog.categories.destroy\":true,\"core.sidebar.group\":true,\"dashboard.index\":true,\"dashboard.update\":true,\"dashboard.reset\":true,\"media.medias.index\":true,\"media.medias.create\":true,\"media.medias.edit\":true,\"media.medias.destroy\":true,\"media.folders.index\":true,\"media.folders.create\":true,\"media.folders.edit\":true,\"media.folders.destroy\":true,\"menu.menus.index\":true,\"menu.menus.create\":true,\"menu.menus.edit\":true,\"menu.menus.destroy\":true,\"menu.menuitems.index\":true,\"menu.menuitems.create\":true,\"menu.menuitems.edit\":true,\"menu.menuitems.destroy\":true,\"page.pages.index\":true,\"page.pages.create\":true,\"page.pages.edit\":true,\"page.pages.destroy\":true,\"setting.settings.index\":true,\"setting.settings.edit\":true,\"tag.tags.index\":true,\"tag.tags.create\":true,\"tag.tags.edit\":true,\"tag.tags.destroy\":true,\"translation.translations.index\":true,\"translation.translations.edit\":true,\"translation.translations.import\":true,\"translation.translations.export\":true,\"user.users.index\":true,\"user.users.create\":true,\"user.users.edit\":true,\"user.users.destroy\":true,\"user.roles.index\":true,\"user.roles.create\":true,\"user.roles.edit\":true,\"user.roles.destroy\":true,\"account.api-keys.index\":true,\"account.api-keys.create\":true,\"account.api-keys.destroy\":true,\"workshop.sidebar.group\":true,\"workshop.modules.index\":true,\"workshop.modules.show\":true,\"workshop.modules.update\":true,\"workshop.modules.disable\":true,\"workshop.modules.enable\":true,\"workshop.modules.publish\":true,\"workshop.themes.index\":true,\"workshop.themes.show\":true,\"workshop.themes.publish\":true}', '2018-06-18 23:16:41', 'Bola', 'Nasr', '2018-06-14 00:05:12', '2018-06-18 23:16:41'),
 (4, 'kooko@admin.com', '$2y$10$N6wZEKvgFUvR2C2s9UY8A.y79QkXvMzfeWbRhR0MugD4vX/y66qeG', '', NULL, 'Koko', 'Nasr', '2018-06-15 06:12:17', '2018-06-15 06:12:17'),
 (6, 'me@admin.com', '$2y$10$zyFzDYdiYaECp1zOqw6eiO5wphEuas1HVefDGEDwlEpbyIMmuPW52', '', NULL, 'me', 'mee', '2018-06-16 19:11:43', '2018-06-16 19:11:43');
 

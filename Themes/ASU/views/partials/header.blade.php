@@ -62,6 +62,7 @@
                       <!--Navbar Brand Mobile-->
                       <div class="rd-navbar-mobile-brand"><a href="index.html"><img width='136' height='138' src="{{Theme::url('images/logo-170x172.png')}}" alt=''/></a></div>
                     </div>
+                    
                     <!-- RD Navbar Nav-->
                     <ul class="rd-navbar-nav">
                       <li><a href="index.html">Home</a>
