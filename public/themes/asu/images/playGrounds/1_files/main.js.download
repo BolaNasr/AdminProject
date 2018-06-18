@@ -1,0 +1,42 @@
+
+var start = 0;
+
+function next_tnews(new_no,type){
+$("#tnews").empty();
+$("#tnews").append('<div class="loading"></div>');
+//$("#tnews").sleep(5000);
+if(start < 0 ) start = 0;
+start++;
+var resatrt = start * new_no;
+
+var req = $.ajax({ 
+					   url   : 'news.php?action=get_next_news&type='+type+'&start='+resatrt,
+                       type  : 'GET'
+                        });
+			 req.done(function(msg) {
+				
+				 $(".news").html(msg);
+				 });
+	
+	}
+	
+function brevious_tnews(new_no,type){
+	$("#tnews").empty();
+	
+start--;
+var resatrt = start * new_no;
+if (resatrt > 0 ) resatrt = resatrt;
+else resatrt = 0;
+
+var req = $.ajax({ 
+					   url     : 'news.php?action=get_next_news&type='+type+'&start='+resatrt,
+                       type  : 'GET'
+                        });
+						
+			 req.done(function(msg) {
+			
+				 $(".news").html(msg);
+				 });
+
+				 
+	}
