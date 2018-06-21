@@ -65,7 +65,9 @@
                     
                     <!-- RD Navbar Nav-->
                     <ul class="rd-navbar-nav">
-                      <li><a href="index.html">Home</a>
+                    @yield('menu')
+                    @show
+                      <!-- <li><a href="index.html">Home</a>
                       </li>
                       <li><a href="#">About ASU</a>
                         <div class="rd-navbar-megamenu" style="width: 100%;">
@@ -257,7 +259,7 @@
                           <li><a href="jobs.html">Jobs</a>
                           </li>
                         </ul>
-                      </li>
+                      </li> -->
                       <li>
                         <ul class="languagepicker roundborders">
                         <?php

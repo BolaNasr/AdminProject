@@ -22,8 +22,7 @@ class MenuPresenter extends Presenter
      */
     public function getOpenTagWrapper()
     {
-        // return PHP_EOL . '<ul class="rd-navbar-nav">' . PHP_EOL;
-        return PHP_EOL . '' . PHP_EOL;
+        return PHP_EOL . '<ul class="nav navbar-nav">' . PHP_EOL;
     }
 
     /**
@@ -31,8 +30,7 @@ class MenuPresenter extends Presenter
      */
     public function getCloseTagWrapper()
     {
-        // return PHP_EOL . '</ul>' . PHP_EOL;
-        return PHP_EOL . '' . PHP_EOL;
+        return PHP_EOL . '</ul>' . PHP_EOL;
     }
 
     /**
@@ -42,8 +40,7 @@ class MenuPresenter extends Presenter
     {
         $this->setLocale($item);
 
-        return '<li' . $this->getActiveState($item) . '><a href="' . $item->getUrl() . '" ' . $item->getAttributes() . '>
-        ' . $item->getIcon() . ' ' . $item->title . '</a></li>' . PHP_EOL;
+        return '<li' . $this->getActiveState($item) . '><a href="' . $item->getUrl() . '" ' . $item->getAttributes() . '>' . $item->getIcon() . ' ' . $item->title . '</a></li>' . PHP_EOL;
     }
 
     /**
@@ -72,11 +69,12 @@ class MenuPresenter extends Presenter
      */
     public function getMenuWithDropDownWrapper($item)
     {
-        return '<li class="' . $this->getActiveStateOnChild($item, ' active') . '">
-                  <a href="#">
-                    ' . $item->getIcon() . ' ' . $item->title . '                    
+        return '<li class="dropdown' . $this->getActiveStateOnChild($item, ' active') . '">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    ' . $item->getIcon() . ' ' . $item->title . '
+                    <b class="caret"></b>
                   </a>
-                  <ul class="rd-navbar-dropdown">
+                  <ul class="dropdown-menu">
                     ' . $this->getChildMenuItems($item) . '
                   </ul>
                 </li>'

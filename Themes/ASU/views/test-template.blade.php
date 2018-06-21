@@ -8,9 +8,11 @@
     <meta name="description" content="{{ $page->meta_description }}" />
 @stop
 
+
+
 @section('content')
-    <div class="row">
-        <h1>{{ $page->title }}</h1>
+    <!-- <div class="row"> -->
+        <h1>test {{ $page->title }}</h1>
         {!! $page->body !!}
-    </div>
+    <!-- </div> -->
 @stop
