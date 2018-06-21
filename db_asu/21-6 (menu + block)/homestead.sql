@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jun 21, 2018 at 08:21 AM
+-- Generation Time: Jun 21, 2018 at 10:13 AM
 -- Server version: 5.7.19
 -- PHP Version: 7.1.9
 
@@ -60,7 +60,14 @@ CREATE TABLE IF NOT EXISTS `block__blocks` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `block__blocks`
+--
+
+INSERT INTO `block__blocks` (`id`, `name`, `created_at`, `updated_at`) VALUES
+(1, 'about-asu', '2018-06-21 07:50:51', '2018-06-21 07:50:51');
 
 -- --------------------------------------------------------
 
@@ -78,7 +85,15 @@ CREATE TABLE IF NOT EXISTS `block__blocks_translations` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `block__blocks_translations_block_id_locale_unique` (`block_id`,`locale`),
   KEY `block__blocks_translations_locale_index` (`locale`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `block__blocks_translations`
+--
+
+INSERT INTO `block__blocks_translations` (`id`, `online`, `body`, `block_id`, `locale`) VALUES
+(1, 1, '<!-- A Few Words About the University-->\r\n<section class=\"section-70 section-md-114 bg-index-body\">\r\n<div class=\"shell\">\r\n<div class=\"range text-sm-left range-sm-justify\">\r\n<div class=\"cell-sm-7 view-animate fadeInRightSm delay-04\">\r\n<div class=\"img-wrap-2\">\r\n<figure><img alt=\"\" class=\"img-responsive reveal-inline-block\" src=\"http://localhost:8000/assets/media/home-01-620-350.jpg\" style=\"width: 620px; height: 350px;\" /></figure>\r\n</div>\r\n</div>\r\n\r\n<div class=\"cell-sm-5 offset-top-50 offset-sm-top-0\">\r\n<h2 class=\"home-headings-custom text-bold view-animate fadeInLeftSm delay-06\"><span class=\"first-word\">About </span>ASU</h2>\r\n\r\n<div class=\"offset-top-35 offset-md-top-60 view-animate fadeInLeftSm delay-08\">\r\n<p>Ain Shams University, as the third Egyptian university, was founded in July 1950 under the name of &quot;Ibrahim Pasha University&quot;. It participated with the two earlier universities, &quot;Cairo University&quot; (Fua&#39;d the 1st ) and &quot;Alexandria University&quot; (Farouk the 1st) in fulfilling the message of universities and meeting the increasing demand of youth for higher education. When it was first established, Ain Shams University comprised a number of distinguished faculties and academic institutes, which were later developed into university.</p>\r\n</div>\r\n\r\n<div class=\"offset-top-30 view-animate fadeInLeftSm delay-1\"><a class=\"btn btn-ellipse btn-icon btn-icon-right btn-primary\" href=\"history.html\"><span>Learn More</span></a></div>\r\n</div>\r\n</div>\r\n</div>\r\n</section>', 1, 'en'),
+(2, 1, '<section class=\"section-70 section-md-114 bg-index-body\">\r\n<div class=\"shell\">\r\n<div class=\"range text-sm-left range-sm-justify\">\r\n<div class=\"cell-sm-7 view-animate fadeInRightSm delay-04\">\r\n<div class=\"img-wrap-2\">\r\n<figure><img alt=\"asu\" class=\"img-responsive reveal-inline-block\" src=\"http://localhost:8000/assets/media/home-01-620-350.jpg\" style=\"width: 620px; height: 350px;\" /></figure>\r\n</div>\r\n</div>\r\n\r\n<div class=\"cell-sm-5 offset-top-50 offset-sm-top-0\">\r\n<h2 class=\"home-headings-custom text-bold view-animate fadeInLeftSm delay-06\" style=\"text-align: right\"><span class=\"first-word\">عن </span>الجامعة</h2>\r\n\r\n<div class=\"offset-top-35 offset-md-top-60 view-animate fadeInLeftSm delay-08\">\r\n<p>جامعة عين شمس ، الجامعة المصرية الثالثة ، تأسست في يوليو 1950 تحت اسم &quot;جامعة إبراهيم باشا&quot;. شاركت مع جامعتين سابقتين هما &quot;جامعة القاهرة&quot; (فؤاد الأول) و &quot;جامعة الإسكندرية&quot; (فاروق الأول) في الوفاء برسالة الجامعات وتلبية الطلب المتزايد للشباب للتعليم العالي. عندما تأسست جامعة عين شمس ، تألفت من عدد من الكليات والمعاهد الأكاديمية المتميزة ، والتي تم تطويرها فيما بعد لتصبح جامعة.</p>\r\n</div>\r\n\r\n<div class=\"offset-top-30 view-animate fadeInLeftSm delay-1\"><a class=\"btn btn-ellipse btn-icon btn-icon-right btn-primary\" href=\"history_ar.html\"><span>أعرف المزيد</span></a></div>\r\n</div>\r\n</div>\r\n</div>\r\n</section>', 1, 'ar');
 
 -- --------------------------------------------------------
 
@@ -184,7 +199,7 @@ CREATE TABLE IF NOT EXISTS `media__files` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `media__files`
@@ -193,7 +208,8 @@ CREATE TABLE IF NOT EXISTS `media__files` (
 INSERT INTO `media__files` (`id`, `is_folder`, `filename`, `path`, `extension`, `mimetype`, `filesize`, `folder_id`, `created_at`, `updated_at`) VALUES
 (6, 0, '69002.png', '/assets/media/69002.png', 'png', 'image/png', '49653', '0', '2018-06-15 07:58:42', '2018-06-15 07:58:42'),
 (7, 0, 'bg-clean-pic-01.jpg', '/assets/media/bg-clean-pic-01.jpg', 'jpg', 'image/jpeg', '222993', '0', '2018-06-15 08:07:12', '2018-06-15 08:07:12'),
-(8, 0, 'asu-logo.png', '/assets/media/asu-logo.png', 'png', 'image/png', '10128', '0', '2018-06-16 19:30:19', '2018-06-16 19:30:19');
+(8, 0, 'asu-logo.png', '/assets/media/asu-logo.png', 'png', 'image/png', '10128', '0', '2018-06-16 19:30:19', '2018-06-16 19:30:19'),
+(9, 0, 'home-01-620-350.jpg', '/assets/media/home-01-620-350.jpg', 'jpg', 'image/jpeg', '74318', '0', '2018-06-21 07:47:12', '2018-06-21 07:47:12');
 
 -- --------------------------------------------------------
 
@@ -445,7 +461,7 @@ CREATE TABLE IF NOT EXISTS `page__pages` (
 --
 
 INSERT INTO `page__pages` (`id`, `is_home`, `template`, `created_at`, `updated_at`) VALUES
-(1, 1, 'home', '2018-06-14 00:05:35', '2018-06-14 00:05:35'),
+(1, 1, 'home', '2018-06-14 00:05:35', '2018-06-21 08:07:00'),
 (2, 0, 'default', '2018-06-16 18:58:12', '2018-06-16 18:58:12');
 
 -- --------------------------------------------------------
@@ -501,7 +517,7 @@ CREATE TABLE IF NOT EXISTS `persistences` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `persistences_code_unique` (`code`)
-) ENGINE=InnoDB AUTO_INCREMENT=271 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=291 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `persistences`
@@ -776,7 +792,27 @@ INSERT INTO `persistences` (`id`, `user_id`, `code`, `created_at`, `updated_at`)
 (267, 1, 'zUjj8uJ3dh6GuWDkIOJey4JyJ3jB76Iq', '2018-06-21 06:16:17', '2018-06-21 06:16:17'),
 (268, 1, 'jElGMsfgoavkHbwhI3Ow6rrVh3M2iJ5P', '2018-06-21 06:16:26', '2018-06-21 06:16:26'),
 (269, 1, 'SiLkGZ0DQ1Y04RCIClVuDWukVJvbEPEq', '2018-06-21 06:17:39', '2018-06-21 06:17:39'),
-(270, 1, 'W8bcknHYXS7MTsfPs4vnDDFP5tYv02uJ', '2018-06-21 06:17:44', '2018-06-21 06:17:44');
+(270, 1, 'W8bcknHYXS7MTsfPs4vnDDFP5tYv02uJ', '2018-06-21 06:17:44', '2018-06-21 06:17:44'),
+(271, 1, 'V4EotZGcQ0a5i6nWnGhkPJYh2YjJHR5a', '2018-06-21 07:47:12', '2018-06-21 07:47:12'),
+(272, 1, 'E8ClkVQQ6H8iGoM2qtTN7y49Qc3ptaUJ', '2018-06-21 07:52:27', '2018-06-21 07:52:27'),
+(273, 1, 'JuFU589GUAFcbjTzXdRhOIu7EzoCYLwX', '2018-06-21 07:52:36', '2018-06-21 07:52:36'),
+(274, 1, 'uM7vhonPg8szxaKIeEmQ4dxfW9HnytJ6', '2018-06-21 07:52:37', '2018-06-21 07:52:37'),
+(275, 1, 'Iwi7IpJiyRUg1AAFGBgD6fOHvEAhNUPy', '2018-06-21 07:52:39', '2018-06-21 07:52:39'),
+(276, 1, 'QUBsgB0onmdZyMafq8eFTrNcobIaa5n8', '2018-06-21 07:58:10', '2018-06-21 07:58:10'),
+(277, 1, '0aTsD7kXO64tvZU78jG3fYxHA8zhnRQX', '2018-06-21 07:58:13', '2018-06-21 07:58:13'),
+(278, 1, 'P7RQQJNwGIVClrh8ltL280LSyhuHCEP0', '2018-06-21 07:59:11', '2018-06-21 07:59:11'),
+(279, 1, '9Cwyzt8aZ8pQipzJcBtRyz92cJ4RQEAb', '2018-06-21 07:59:12', '2018-06-21 07:59:12'),
+(280, 1, 'XbVMEYZTjrKWHhwlgn8E2P24lw1AWfEe', '2018-06-21 07:59:14', '2018-06-21 07:59:14'),
+(281, 1, 'Yu5T8fPcESwFlEOQ3UV2HyQQwjire208', '2018-06-21 07:59:22', '2018-06-21 07:59:22'),
+(282, 1, '2tlFxedTBKt3HjB7v8k60QWsiDDsaAl6', '2018-06-21 07:59:25', '2018-06-21 07:59:25'),
+(283, 1, 'EYv3OcI4RTVoAgcnMyPqTQfFkVVMRhyU', '2018-06-21 08:02:44', '2018-06-21 08:02:44'),
+(284, 1, 'UVrIcnpbTDZUVkjjA0t3Xglyb6EyLIt4', '2018-06-21 08:02:46', '2018-06-21 08:02:46'),
+(285, 1, 'gkiavNIaKWy00CFh6U82icndp1a8bRRN', '2018-06-21 08:02:48', '2018-06-21 08:02:48'),
+(286, 1, 'VnPyj7nQFdlDylOfi03XXuRz6SZ7fKII', '2018-06-21 08:06:46', '2018-06-21 08:06:46'),
+(287, 1, 'FTnYx2sRuNdaqIgtigxP9Z8hT09hnVBh', '2018-06-21 08:06:47', '2018-06-21 08:06:47'),
+(288, 1, 'cVHNaH5keLc9iIsdqlMSQRMAlPlAZ57B', '2018-06-21 08:06:49', '2018-06-21 08:06:49'),
+(289, 1, '2fwIN6BTdkZkrib3INLyHazgIYbCplKK', '2018-06-21 08:07:00', '2018-06-21 08:07:00'),
+(290, 1, 'q6QbTd23Naoy0Oorug8omctPq8cApoBn', '2018-06-21 08:07:03', '2018-06-21 08:07:03');
 
 -- --------------------------------------------------------
 
@@ -1079,7 +1115,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `password`, `permissions`, `last_login`, `first_name`, `last_name`, `created_at`, `updated_at`) VALUES
-(1, 'bola.e.nasr@gmail.com', '$2y$10$AETjNr.taa7EnteuxXzuxuQXPABetg25lzRANoG6xryhS/cQuYX.C', '{\"block.blocks.index\":true,\"block.blocks.create\":true,\"block.blocks.edit\":true,\"block.blocks.destroy\":true,\"blog.posts.index\":true,\"blog.posts.create\":true,\"blog.posts.edit\":true,\"blog.posts.destroy\":true,\"blog.categories.index\":true,\"blog.categories.create\":true,\"blog.categories.edit\":true,\"blog.categories.destroy\":true,\"core.sidebar.group\":true,\"dashboard.index\":true,\"dashboard.update\":true,\"dashboard.reset\":true,\"media.medias.index\":true,\"media.medias.create\":true,\"media.medias.edit\":true,\"media.medias.destroy\":true,\"media.folders.index\":true,\"media.folders.create\":true,\"media.folders.edit\":true,\"media.folders.destroy\":true,\"menu.menus.index\":true,\"menu.menus.create\":true,\"menu.menus.edit\":true,\"menu.menus.destroy\":true,\"menu.menuitems.index\":true,\"menu.menuitems.create\":true,\"menu.menuitems.edit\":true,\"menu.menuitems.destroy\":true,\"page.pages.index\":true,\"page.pages.create\":true,\"page.pages.edit\":true,\"page.pages.destroy\":true,\"setting.settings.index\":true,\"setting.settings.edit\":true,\"tag.tags.index\":true,\"tag.tags.create\":true,\"tag.tags.edit\":true,\"tag.tags.destroy\":true,\"translation.translations.index\":true,\"translation.translations.edit\":true,\"translation.translations.import\":true,\"translation.translations.export\":true,\"user.users.index\":true,\"user.users.create\":true,\"user.users.edit\":true,\"user.users.destroy\":true,\"user.roles.index\":true,\"user.roles.create\":true,\"user.roles.edit\":true,\"user.roles.destroy\":true,\"account.api-keys.index\":true,\"account.api-keys.create\":true,\"account.api-keys.destroy\":true,\"workshop.sidebar.group\":true,\"workshop.modules.index\":true,\"workshop.modules.show\":true,\"workshop.modules.update\":true,\"workshop.modules.disable\":true,\"workshop.modules.enable\":true,\"workshop.modules.publish\":true,\"workshop.themes.index\":true,\"workshop.themes.show\":true,\"workshop.themes.publish\":true}', '2018-06-21 06:17:44', 'Bola', 'Nasr', '2018-06-14 00:05:12', '2018-06-21 06:17:44'),
+(1, 'bola.e.nasr@gmail.com', '$2y$10$AETjNr.taa7EnteuxXzuxuQXPABetg25lzRANoG6xryhS/cQuYX.C', '{\"block.blocks.index\":true,\"block.blocks.create\":true,\"block.blocks.edit\":true,\"block.blocks.destroy\":true,\"blog.posts.index\":true,\"blog.posts.create\":true,\"blog.posts.edit\":true,\"blog.posts.destroy\":true,\"blog.categories.index\":true,\"blog.categories.create\":true,\"blog.categories.edit\":true,\"blog.categories.destroy\":true,\"core.sidebar.group\":true,\"dashboard.index\":true,\"dashboard.update\":true,\"dashboard.reset\":true,\"media.medias.index\":true,\"media.medias.create\":true,\"media.medias.edit\":true,\"media.medias.destroy\":true,\"media.folders.index\":true,\"media.folders.create\":true,\"media.folders.edit\":true,\"media.folders.destroy\":true,\"menu.menus.index\":true,\"menu.menus.create\":true,\"menu.menus.edit\":true,\"menu.menus.destroy\":true,\"menu.menuitems.index\":true,\"menu.menuitems.create\":true,\"menu.menuitems.edit\":true,\"menu.menuitems.destroy\":true,\"page.pages.index\":true,\"page.pages.create\":true,\"page.pages.edit\":true,\"page.pages.destroy\":true,\"setting.settings.index\":true,\"setting.settings.edit\":true,\"tag.tags.index\":true,\"tag.tags.create\":true,\"tag.tags.edit\":true,\"tag.tags.destroy\":true,\"translation.translations.index\":true,\"translation.translations.edit\":true,\"translation.translations.import\":true,\"translation.translations.export\":true,\"user.users.index\":true,\"user.users.create\":true,\"user.users.edit\":true,\"user.users.destroy\":true,\"user.roles.index\":true,\"user.roles.create\":true,\"user.roles.edit\":true,\"user.roles.destroy\":true,\"account.api-keys.index\":true,\"account.api-keys.create\":true,\"account.api-keys.destroy\":true,\"workshop.sidebar.group\":true,\"workshop.modules.index\":true,\"workshop.modules.show\":true,\"workshop.modules.update\":true,\"workshop.modules.disable\":true,\"workshop.modules.enable\":true,\"workshop.modules.publish\":true,\"workshop.themes.index\":true,\"workshop.themes.show\":true,\"workshop.themes.publish\":true}', '2018-06-21 08:07:03', 'Bola', 'Nasr', '2018-06-14 00:05:12', '2018-06-21 08:07:03'),
 (4, 'kooko@admin.com', '$2y$10$N6wZEKvgFUvR2C2s9UY8A.y79QkXvMzfeWbRhR0MugD4vX/y66qeG', '', NULL, 'Koko', 'Nasr', '2018-06-15 06:12:17', '2018-06-15 06:12:17'),
 (6, 'me@admin.com', '$2y$10$zyFzDYdiYaECp1zOqw6eiO5wphEuas1HVefDGEDwlEpbyIMmuPW52', '', NULL, 'me', 'mee', '2018-06-16 19:11:43', '2018-06-16 19:11:43');
 
