@@ -31,11 +31,11 @@
     @include('partials.navigation')
 <div class="page text-center">
     <?php 
-        Menu::render('Bola', 'Modules\Menu\Presenters\MenuPresenter');
+        Menu::render('Main', 'Modules\Menu\Presenters\MenuPresenter');
     ?>
     <!-- menu li(s) that exist in header -->
     @section('menu')
-        {!! Menu::get('Bola') !!}
+        {!! Menu::get('Main') !!}
     @endsection
     @include('partials.header')
 
