@@ -30,11 +30,19 @@
 @endauth
     @include('partials.navigation')
 <div class="page text-center">
-@include('partials.header')
-<main class="page-content">
-    @yield('content')
-</main>
-@include('partials.footer')
+    <?php 
+        Menu::render('Bola', 'Modules\Menu\Presenters\MenuPresenter');
+    ?>
+    <!-- menu li(s) that exist in header -->
+    @section('menu')
+        {!! Menu::get('Bola') !!}
+    @endsection
+    @include('partials.header')
+
+    <main class="page-content">
+        @yield('content')
+    </main>
+    @include('partials.footer')
 </div>
 
 @yield('scripts')
