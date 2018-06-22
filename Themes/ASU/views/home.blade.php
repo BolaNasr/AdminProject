@@ -14,4 +14,23 @@
         <!-- <h1>{{ $page->title }}</h1> -->
         <!-- :: Bola :: look here: -->
        {!! Block::get('about-asu') !!}
+       {!! Block::get('gallery') !!}
+       {!! Block::get('contact-info') !!}
+       {!! Block::get('map') !!}
+@stop
+
+@section('modal')
+    {!! Block::get('modal') !!}
+@stop
+
+
+@section('more_scripts')
+    <script type="text/javascript">
+      $('#owl-carousel').owlCarousel({
+          autoplay: true,
+          center: true,
+          loop: true,
+          nav: true,
+        });
+    </script>
 @stop

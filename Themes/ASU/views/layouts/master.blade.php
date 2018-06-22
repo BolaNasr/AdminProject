@@ -42,6 +42,9 @@
     <main class="page-content">
         @yield('content')
     </main>
+
+    @yield('modal')
+
     @include('partials.footer')
 </div>
 
