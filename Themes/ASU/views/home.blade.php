@@ -1,5 +1,6 @@
 @extends('layouts.master')
 
+
 @section('title')
     {{ $page->title }} | @parent
 @stop
@@ -19,8 +20,11 @@
         <!-- :: Bola :: look here: -->
        {!! Block::get('swiper') !!}
        {!! Block::get('about-asu') !!}
+
         <!-- Block::get('qoutes')  -->
+       {!! Block::get('qoutes') !!}
        {!! Block::get('gallery') !!}
+       
        {!! Block::get('contact-info') !!}
        {!! Block::get('map') !!}
 @stop
@@ -30,18 +34,7 @@
 @stop
 
 
-@section('js')
-    <script src="{{Theme::url('js/core.min.js')}}"></script>
-    <script src="{{Theme::url('js/script.js')}}"></script>
-    <script type="text/javascript">
-      $('#owl-carousel').owlCarousel({
-          autoplay: true,
-          center: true,
-          loop: true,
-          nav: true,
-        });
-    </script>
-@stop
+
 
 
 
@@ -118,4 +111,17 @@
           </nav>
         </div>
       </header>
+@stop
+
+@section('js')
+    <script src="{{Theme::url('js/core.min.js')}}"></script>
+    <script src="{{Theme::url('js/script.js')}}"></script>
+    <script type="text/javascript">
+      $('#owl-carousel').owlCarousel({
+          autoplay: true,
+          center: true,
+          loop: true,
+          nav: true,
+        });
+    </script>
 @stop

@@ -1343,7 +1343,7 @@ $document.ready(function () {
         responsive: responsive,
         animateOut: c.attr("data-animation-out") || false,
         navText: $.parseJSON(c.attr("data-nav-text")) || [],
-        navClass: $.parseJSON(c.attr("data-nav-class")) || ['owl-prev', 'owl-next'],
+        //navClass: $.parseJSON(c.attr("data-nav-class")) || ['owl-prev', 'owl-next'],
       });
 
     }
