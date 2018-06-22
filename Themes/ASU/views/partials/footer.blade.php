@@ -116,8 +116,4 @@
         </div>
       </div>
     </div>
-    <!-- Java script-->
-    <script src="{{Theme::url('js/core.min.js')}}"></script>
-    <script src="{{Theme::url('js/script.js')}}"></script>
-    @yield('more_scripts')
-    @show
+   
