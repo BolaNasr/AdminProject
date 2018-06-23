@@ -47,12 +47,14 @@ class PublicController extends BasePublicController
     public function homepage()
     {
         $page = $this->page->findHomepage();
-
+        $blogPostRepository = $this->app->make('Modules\Blog\Repositories\PostRepository');
+        $latestPosts = $blogPostRepository->all()->where('category_id','2')->take(4);
+        $latestPosts = $blogPostRepository->all()->where('category_id','2')->take(4);
+        $latestEvents = $blogPostRepository->all()->where('category_id','1')->take(4);
         $this->throw404IfNotFound($page);
-
         $template = $this->getTemplateForPage($page);
 
-        return view($template, compact('page'));
+        return view($template, compact('page','latestPosts','latestEvents'));
     }
 
     /**
