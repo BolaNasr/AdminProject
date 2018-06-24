@@ -1,6 +1,6 @@
 <!-- Page Footer-->
       <!-- Corporate footer-->
-      <footer class="page-footer">
+      <footer class="page-footer" style="background-color: white;">
         <div class="shell-wide">
           <div class="hr bg-gray-light"></div>
         </div>
@@ -42,15 +42,15 @@
                 </ul>
               </div>
               <div class="offset-top-15 text-left">
-                <ul class="list-inline list-inline-xs list-inline-madison">
+                  <ul class="list-inline list-inline-xs list-inline-madison">
                     <li><a class="icon icon-xxs fa-facebook icon-circle icon-gray-light-filled" href="https://www.facebook.com/AinShams.University.EG/"></a></li>
                     <li><a class="icon icon-xxs fa-twitter icon-circle icon-gray-light-filled" href="https://twitter.com/ainshamsegypt"></a></li>
                     <li><a class="icon icon-xxs fa fa-google-plus icon-circle icon-gray-light-filled google-plusH" href="https://plus.google.com/u/0/110327766728601587217 "></a></li>
                     <li><a class="icon icon-xxs fa fa-wordpress icon-circle icon-gray-light-filled wordPressH " href="https://ainshamsuniversity14.wordpress.com/"></a></li>
-                    <li><a class="icon icon-xxs fa fa-file-code-o icon-circle icon-gray-light-filled wixH" href="http://ainshamsuni.wixsite.com/asu-ainshams"></a></li>
-                    <li><a class="icon icon-xxs fa fa-file-code-o icon-circle icon-gray-light-filled blogH" href="https://asuniversity.blogspot.com.eg/"></a></li>
-                 </ul>
-              </div>
+                    <li><a class="" href="http://ainshamsuni.wixsite.com/asu-ainshams"><div  class="wixH"></div></a></li>
+                    <li class="" ><a  href="https://asuniversity.blogspot.com.eg/"><div  class="blogH"></div></a></li>
+                  </ul>
+                </div>
             </div>
             <div class="cell-xs-10 cell-md-8 cell-lg-4 text-lg-left offset-top-50 offset-lg-top-0">
               <h6 class="text-bold">Newsletter</h6>

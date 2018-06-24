@@ -1,5 +1,6 @@
-<section class="bg-white">
-          <div class="shell-wide section-70 section-md-114">
+
+<section class="bg-white" style="text-align:  center;">
+          <div class="shell-wide section-70 section-md-114" >
             <h2 class="home-headings-custom text-bold view-animate fadeInUpSmall delay-06"><span class="first-word">ASU </span> Events</h2>
             <div class="range offset-top-60 range-xs-center">
 

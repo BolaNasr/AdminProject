@@ -13,6 +13,7 @@
 @section('css')
     {!! Theme::style('css/style1.css') !!}
     {!! Theme::style('css/slider.css') !!}
+    
 @endsection
 
 @section('content')
