@@ -43,7 +43,7 @@
               </div>
               <div class="rd-navbar-menu-wrap clearfix">
                 <!--Navbar Brand-->
-                <div class="rd-navbar-brand"><a class="reveal-inline-block" href="#">
+                <div class="rd-navbar-brand"><a class="reveal-inline-block" href="{{url('')}}">
                     <div class="unit unit-xs-middle unit-xl unit-xl-horizontal unit-spacing-xxs">
                       <div class="unit-left"><img width='170' height='172' src="{{Theme::url('images/logo-170x172.png')}}" alt=''/>
                       </div>

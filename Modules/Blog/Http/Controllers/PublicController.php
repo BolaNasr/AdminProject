@@ -19,17 +19,32 @@ class PublicController extends BasePublicController
         $this->post = $post;
     }
 
-    public function index()
+    public function newsIndex()
     {
-        $posts = $this->post->allTranslatedIn(App::getLocale());
+        $posts = $this->post->allTranslatedIn(App::getLocale())->where('category_id','2');
 
-        return view('blog.index', compact('posts'));
+        return view('news.index', compact('posts'));
+    } 
+    public function eventsIndex()
+    {
+        $posts = $this->post->allTranslatedIn(App::getLocale())->where('category_id','1');
+
+        return view('events.index', compact('posts'));
     }
 
-    public function show($slug)
+    public function newsShow($slug)
     {
         $post = $this->post->findBySlug($slug);
+        $recent = $this->post->allTranslatedIn(App::getLocale())->where('category_id','2')->take(3);
 
-        return view('blog.show', compact('post'));
+        return view('news.show', compact('post','recent'));
     }
+    public function eventsShow($slug)
+    {
+        $post = $this->post->findBySlug($slug);
+        $recent = $this->post->allTranslatedIn(App::getLocale())->where('category_id','1')->take(3);
+
+        return view('events.show', compact('post','recent'));
+    }
+
 }

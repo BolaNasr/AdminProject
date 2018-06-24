@@ -22,6 +22,11 @@
        {!! Block::get('about-asu') !!}
        <!-- news -->
        @include('partials.news')
+       <!-- events -->
+       @include('partials.events')
+       {!! Block::get('services') !!}
+       {!! Block::get('asu-on') !!}
+       {!! Block::get('facts') !!}
        {!! Block::get('qoutes') !!}
        {!! Block::get('gallery') !!}
        {!! Block::get('contact-info') !!}

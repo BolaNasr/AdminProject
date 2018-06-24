@@ -7,7 +7,7 @@
         <div class="shell section-60">
           <div class="range range-lg-justify range-xs-center">
             <div class="cell-md-3 cell-lg-2">
-              <!--Footer brand--><a class="reveal-inline-block" href="index.html"><img width='170' height='172' src="{{ Theme::url('images/logo-170x1722.png') }}" alt='uni logo'/>
+              <!--Footer brand--><a class="reveal-inline-block" href="{{url('')}}"><img width='170' height='172' src="{{ Theme::url('images/logo-170x1722.png') }}" alt='uni logo'/>
                 <div>
                   <h6 class="barnd-name text-bold offset-top-25">Ain Shams</h6>
                 </div>

@@ -16,7 +16,7 @@
                   <div class="rd-navbar-mobile-scroll">
                     <div class="rd-navbar-mobile-header-wrap">
                       <!--Navbar Brand Mobile-->
-                      <div class="rd-navbar-mobile-brand"><a href="index.html"><img width='136' height='138' src="{{Theme::url('images/logo-170x172.png')}}" alt=''/></a></div>
+                      <div class="rd-navbar-mobile-brand"><a href="{{url('')}}"><img width='136' height='138' src="{{Theme::url('images/logo-170x172.png')}}" alt=''/></a></div>
                     </div>
                     <!-- RD Navbar Nav-->
                     <ul class="rd-navbar-nav">
@@ -33,8 +33,8 @@
                         </div>
                       </div>
                       <ul class="languagepicker roundborders">
-                        <a href="index_ar.html"><li><img src="{{Theme::url('images/egypt.jpg')}}" width="20" height="15"/>AR</li></a>
-                        <a href="index.html"><li><img src="{{Theme::url('images/amrica.jpg')}}"/>EN</li></a>
+                        <a href="{{url('/ar')}}"><li><img src="{{Theme::url('images/egypt.jpg')}}" width="20" height="15"/>AR</li></a>
+                        <a href="{{url('/en')}}"><li><img src="{{Theme::url('images/amrica.jpg')}}"/>EN</li></a>
                       </ul>
                       <div class="searBtn" style=" position: absolute;left: 25px;color: #575759; background-color: #fff;border-radius: 5px;">
                         <!-- <a href=""><span class="icon mdi mdi-phone text-middle" style="font-size: 30px;line-height: 32px;"></span></a> -->
