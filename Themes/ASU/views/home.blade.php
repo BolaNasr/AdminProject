@@ -11,8 +11,17 @@
 
 
 @section('css')
+
+  @if(Locale()==="ar")
+    {!! Theme::style('css/style1_ar.css') !!}
+    {!! Theme::style('css/slider_ar.css') !!}          
+  @else
     {!! Theme::style('css/style1.css') !!}
     {!! Theme::style('css/slider.css') !!}
+
+                         
+  @endif
+
     
 @endsection
 
@@ -21,10 +30,23 @@
         <!-- :: Bola :: look here: -->
        {!! Block::get('swiper') !!}
        {!! Block::get('about-asu') !!}
-       <!-- news -->
-       @include('partials.news')
+
+    
+                        @if(Locale()==="ar")
+                          @include('partials.news_ar')
        <!-- events -->
-       @include('partials.events')
+                          @include('partials.events_ar')
+                        
+                        @else
+                          @include('partials.news')
+       <!-- events -->
+                          @include('partials.events')
+
+                         
+                        @endif
+                          
+       <!-- news -->
+       
        {!! Block::get('services') !!}
        {!! Block::get('asu-on') !!}
        {!! Block::get('facts') !!}

@@ -1,6 +1,118 @@
-<!-- Page Footer-->
-      <!-- Corporate footer-->
-      <footer class="page-footer" style="background-color: white;">
+  <?php
+                        if(Locale()==="ar"){
+                          ?>
+        <footer class="page-footer"style="background-color: white;" dir="rtl">
+          <div class="shell-wide">
+            <div class="hr bg-gray-light"></div>
+          </div>
+          <div class="shell section-60">
+            <div class="range range-lg-justify range-xs-center">
+              <div class="cell-md-3 cell-lg-2">
+                <!--Footer brand--><a class="reveal-inline-block" href="#"><img width='170' height='172' src="{{ Theme::url('images/logo-170x1722.png') }}" alt='uni logo'/>
+                  <div>
+                    <h6 class="barnd-name text-bold offset-top-25" style="text-align: center">Ain Shams </h6>
+                  </div>
+                  <div>
+                    <p class="brand-slogan text-gray text-italic font-accent" style="text-align: center">University</p>
+                  </div></a>
+              </div>
+              <div class="cell-xs-10 cell-md-5 cell-lg-4 text-lg-left offset-top-50 offset-md-top-0">
+                <h6 class="text-bold" style="text-align: right">روابط تهمك</h6>
+                <div class="text-subline"></div>
+                <div class="offset-top-30">
+                  <ul class="list-unstyled contact-info list" style="text-align: right">
+                    <li>
+                      <a href="">الجامعات المصرية</a>
+                    </li>
+                    <li class="offset-top-15">
+
+                     <a href="">منحة البحث والمؤتمر</a>
+                    </li>
+                    <li class="offset-top-15">
+                      <a href="">مستشفيات الجامعة</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="offset-top-15 text-right">
+                  <ul class="list-inline list-inline-xs list-inline-madison">
+                    <li><a class="icon icon-xxs fa-facebook icon-circle icon-gray-light-filled"  href="https://www.facebook.com/AinShams.University.EG/"></a></li>
+                    <li><a class="icon icon-xxs fa-twitter icon-circle icon-gray-light-filled" href="https://twitter.com/ainshamsegypt"></a></li>
+                    <li><a class="icon icon-xxs fa fa-google-plus icon-circle icon-gray-light-filled google-plusH" href="https://plus.google.com/u/0/110327766728601587217 "></a></li>
+                    <li><a class="icon icon-xxs fa fa-wordpress icon-circle icon-gray-light-filled wordPressH " href="https://ainshamsuniversity14.wordpress.com/" ></a></li>
+                    <li><a class="icon icon-xxs fa fa-wixsite icon-circle icon-gray-light-filled wixH" href="http://ainshamsuni.wixsite.com/asu-ainshams" ><!--<img src="images/wix.png" alt="wix"> --></a></li>
+                    <li><a class="icon icon-xxs fa fa-blogspot icon-circle icon-gray-light-filled blogH" href="https://asuniversity.blogspot.com.eg/"><!--<img src="images/blogger.png">--></a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="cell-xs-10 cell-md-8 cell-lg-4 text-lg-left offset-top-50 offset-lg-top-0">
+                <h6 class="text-bold" style="text-align: right">النشرة الإخبارية</h6>
+                <div class="text-subline"></div>
+                <div class="offset-top-30 text-left">
+                  <p>أدخل عنوان بريدك الإلكتروني للحصول على آخر أخبار الجامعة والأحداث الخاصة والأنشطة الطلابية التي يتم تسليمها مباشرة إلى صندوق البريد الوارد الخاص بك.</p>
+                </div>
+                <div class="offset-top-10">
+                          <form class="rd-mailform form-subscribe" data-form-output="form-subscribe-footer" data-form-type="subscribe" method="post" action="bat/rd-mailform.php">
+                            <div class="form-group">
+                              <div class="input-group input-group-sm">
+                                <input class="form-control" placeholder="بريدك الإلكتروني" type="email" name="email" data-constraints="@Required @Email"><span class="input-group-btn">
+                                  <button class="btn btn-sm btn-primary" type="submit">الإشتراك</button></span>
+                              </div>
+                            </div>
+                            <div class="form-output" id="form-subscribe-footer"></div>
+                          </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-madison context-dark" >
+            <div class="shell text-md-left section-5">
+              <p>&copy; <span id="copyright-year"></span>جميع الحقوق محفوظة لشروط جامعة عين شمس و<a href="#">سياسة الخصوصية</a></p>
+            </div>
+          </div>
+        </footer>
+    </div>
+    <!-- Global Mailform Output-->
+    <div class="snackbars" id="form-output-global"></div>
+    <!-- PhotoSwipe Gallery-->
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="pswp__bg"></div>
+      <div class="pswp__scroll-wrap">
+        <div class="pswp__container">
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
+        </div>
+        <div class="pswp__ui pswp__ui--hidden">
+          <div class="pswp__top-bar">
+            <div class="pswp__counter"></div>
+            <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+            <button class="pswp__button pswp__button--share" title="Share"></button>
+            <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+            <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+            <div class="pswp__preloader">
+              <div class="pswp__preloader__icn">
+                <div class="pswp__preloader__cut">
+                  <div class="pswp__preloader__donut"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+            <div class="pswp__share-tooltip"></div>
+          </div>
+          <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+          <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+          <div class="pswp__caption">
+            <div class="pswp__caption__center"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+                        <?php
+                        }
+                        else{
+                          ?>
+  <footer class="page-footer" style="background-color: white;">
         <div class="shell-wide">
           <div class="hr bg-gray-light"></div>
         </div>
@@ -72,9 +184,9 @@
             </div>
           </div>
         </div>
-        <div class="bg-madison context-dark">
-          <div class="shell text-md-left section-5">
-            <p>&copy; <span id="copyright-year"></span> All Rights Reserved Terms of Ain Shams University and <a href="privacy.html">Privacy Policy</a></p>
+        <div class="bg-madison context-dark" >
+          <div class="shell text-md-left section-5" >
+            <p>&copy; <span id="copyright-year"></span> All Rights Reserved Terms of Ain Shams University and <a href="#">Privacy Policy</a></p>
           </div>
         </div>
       </footer>
@@ -117,3 +229,10 @@
       </div>
     </div>
    
+
+                          <?php
+                        }
+                          ?>
+<!-- Page Footer-->
+      <!-- Corporate footer-->
+    

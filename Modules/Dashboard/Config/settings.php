@@ -11,7 +11,7 @@ return [
         'description' => 'dashboard::dashboard.welcome-description',
         'view' => 'textarea',
         'translatable' => true,
-        'default' => 'Who you are tomorrow begins with what you do today',
+        'default' => 'Who you are tomorrow begins with what you do today...',
     ],
     'welcome-enabled' => [
         'description' => 'dashboard::dashboard.welcome-enabled',

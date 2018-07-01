@@ -23,6 +23,11 @@
             <div class="box box-primary">
                 <div class="box-header">
                 </div>
+                <p>This is a very simple module to create re-usable blocks of content. The blocks of content are created in the administration. You give it a name and a content.</p>
+                <p>After this, you'll be able to get the content of a block with the following code:</p>
+                <pre><code class="php">{! Block::get('block-name') !}</code>
+                </pre>
+                <p style="color: red;">Note: Delete "!" and add "!!" at both </p>
                 <!-- /.box-header -->
                 <div class="box-body">
                     <table class="data-table table table-bordered table-hover">
