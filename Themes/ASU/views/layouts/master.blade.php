@@ -24,7 +24,7 @@
 @auth
     @include('partials.admin-bar')
 @endauth
-    @include('partials.navigation')
+
 <div class="page text-center">
     @yield('header')
     
